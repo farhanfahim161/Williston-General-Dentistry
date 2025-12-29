@@ -3,695 +3,2616 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Williston General Dentistry | Quality Dental Care Since 1987</title>
+    <title>Williston General Dentistry | Family & Cosmetic Dental Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #047857;
+            --primary-light: #10b981;
+            --secondary: #0d9488;
+            --accent: #f0fdf4;
+            --mint: #d1fae5;
+            --dark: #1f2937;
+            --dark-light: #374151;
+            --gray: #6b7280;
+            --gray-light: #9ca3af;
+            --light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            --shadow-sm: 0 10px 40px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: var(--white);
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Announcement Bar */
+        .announcement {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .announcement a {
+            color: var(--mint);
+            font-weight: 600;
+            margin-left: 8px;
+            text-decoration: underline;
+        }
+
+        .announcement a:hover {
+            color: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
-        nav.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        .header.scrolled {
+            box-shadow: var(--shadow-sm);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .header-top {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px 0;
+        }
+
+        .header-top .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0066cc;
+        .header-contact {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-contact-item {
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .header-contact-item i {
+            color: var(--primary);
+        }
+
+        .header-contact-item a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .header-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .header-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .header-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .header-main {
+            padding: 16px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 36px;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: #333;
             font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--dark-light);
+            font-size: 0.95rem;
             position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: #0066cc;
+            background: var(--primary);
+            border-radius: var(--radius-full);
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover:after {
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        .nav-links a:hover {
-            color: #0066cc;
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: var(--accent);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-toggle i {
+            font-size: 1.3rem;
+            color: var(--primary);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.95) 0%, rgba(0, 73, 153, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&h=1080&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 80px 0 120px;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--white) 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .hero:before {
-            content: '';
+        .hero-pattern {
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-            animation: wave 20s ease-in-out infinite;
+            width: 50%;
+            height: 100%;
+            background-image: radial-gradient(var(--mint) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
         }
 
-        @keyframes wave {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(-50px); }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            padding: 0 40px;
-            text-align: center;
-            color: white;
-            z-index: 1;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #0066cc;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #0066cc;
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #0066cc;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 60px;
-        }
-
-        .about-content {
+        .hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .about-text h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #333;
+        .hero-content {
+            max-width: 560px;
         }
 
-        .about-text p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 15px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
         }
 
-        .about-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            animation: float 6s ease-in-out infinite;
+        .hero-badge i {
+            font-size: 1rem;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .hero-title {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 24px;
         }
 
-        .about-image img {
+        .hero-title span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
             width: 100%;
-            height: 400px;
+            height: 12px;
+            background: var(--mint);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .trust-avatars {
+            display: flex;
+        }
+
+        .trust-avatars img {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            border: 3px solid var(--white);
+            margin-left: -12px;
             object-fit: cover;
         }
 
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        .trust-avatars img:first-child {
+            margin-left: 0;
         }
 
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .trust-text {
+            font-size: 0.9rem;
         }
 
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
+        .trust-text strong {
+            display: block;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .trust-text span {
+            color: var(--gray);
+        }
+
+        .trust-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #fbbf24;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            right: -40px;
+            bottom: -40px;
+            background: var(--mint);
+            border-radius: var(--radius-lg);
+            z-index: 1;
+        }
+
+        .hero-card {
+            position: absolute;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3;
+        }
+
+        .hero-card-1 {
+            bottom: 40px;
+            left: -40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hero-card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-card-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-card-text h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .hero-card-text p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .hero-card-2 {
+            top: 60px;
+            right: -30px;
             text-align: center;
+        }
+
+        .hero-card-2 .number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .hero-card-2 .label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: var(--white);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .stat-item {
+            padding: 40px;
+            text-align: center;
+            border-right: 1px solid #e5e7eb;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .stat-item:last-child {
+            border-right: none;
         }
 
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+        .stat-item:hover {
+            background: var(--accent);
         }
 
-        .service-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #0066cc;
-        }
-
-        .service-card p {
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* Why Choose Us */
-        .why-choose {
-            padding: 100px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #0066cc, #004999);
-            border-radius: 50%;
+        .stat-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--mint);
+            border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            font-size: 36px;
-            color: white;
             transition: all 0.3s ease;
         }
 
-        .feature:hover .feature-icon {
-            transform: rotate(360deg);
+        .stat-item:hover .stat-icon {
+            background: var(--primary);
         }
 
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #333;
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
         }
 
-        .feature p {
-            color: #666;
+        .stat-item:hover .stat-icon i {
+            color: var(--white);
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            color: white;
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 8px;
         }
 
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
+            align-items: center;
         }
 
-        .contact-info h3 {
-            font-size: 32px;
-            margin-bottom: 30px;
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            position: relative;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: start;
-            margin-bottom: 25px;
-            gap: 15px;
+        .about-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
         }
 
-        .contact-icon {
-            font-size: 24px;
-            margin-top: 5px;
+        .about-img:first-child {
+            grid-row: span 2;
         }
 
-        .contact-details h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .contact-details p {
-            opacity: 0.9;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
+        .about-img img {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-family: inherit;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .contact-form textarea {
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px 32px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.3);
+        }
+
+        .about-badge i {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .about-badge span {
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: var(--radius-full);
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 36px 0;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .about-feature-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-feature-icon i {
+            color: var(--primary);
+        }
+
+        .about-feature span {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .services-wrapper {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .services-sidebar {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .services-nav {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 120px;
+        }
+
+        .services-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .services-nav-item:hover,
+        .services-nav-item.active {
+            background: var(--accent);
+        }
+
+        .services-nav-item.active {
+            background: var(--primary);
+        }
+
+        .services-nav-item.active * {
+            color: var(--white) !important;
+        }
+
+        .services-nav-item i {
+            font-size: 1.3rem;
+            color: var(--primary);
+            width: 24px;
+            text-align: center;
+        }
+
+        .services-nav-item span {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .services-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: var(--mint);
+        }
+
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--accent);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+        }
+
+        .service-card:hover .service-icon i {
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 14px;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .why-us .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-us .section-label {
+            color: var(--mint);
+        }
+
+        .why-us .section-label::before {
+            background: var(--mint);
+        }
+
+        .why-us .section-title {
+            color: var(--white);
+        }
+
+        .why-us .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .why-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .why-card h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            position: relative;
+            margin-bottom: 24px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.08);
+        }
+
+        .team-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover .team-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-overlay a {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .team-overlay a:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .team-card .role {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-quote i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+
+        .testimonial-text {
+            color: var(--dark-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+        }
+
+        .testimonial-author h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-author span {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: var(--radius-lg);
+            padding: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Appointment Form */
+        .appointment {
+            padding: 100px 0;
+            background: var(--accent);
+        }
+
+        .appointment .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .appointment-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .appointment-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+        }
+
+        .appointment-features {
+            display: grid;
+            gap: 20px;
+        }
+
+        .appointment-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .appointment-feature-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--mint);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .appointment-feature-icon i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .appointment-feature h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .appointment-feature p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .appointment-form {
+            background: var(--white);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .appointment-form h3 {
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+            background: var(--light);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
 
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px;
-            text-align: center;
+        .appointment-form .btn {
+            width: 100%;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Contact Info Bar */
+        .contact-bar {
+            background: var(--dark);
+            padding: 60px 0;
         }
 
-        .footer-content p {
-            margin-bottom: 10px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 100px 40px;
-            background: white;
-        }
-
-        .gallery-grid {
-            max-width: 1200px;
-            margin: 60px auto 0;
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
             gap: 20px;
         }
 
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            color: var(--primary-light);
+            font-size: 1.3rem;
+        }
+
+        .contact-item h4 {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-about .logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-about .logo-text {
+            color: var(--white);
+        }
+
+        .footer-about p {
+            color: var(--gray-light);
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
             transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+
+        .footer h4 {
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter p {
+            color: var(--gray-light);
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 18px;
+            border: none;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+            outline: none;
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--gray-light);
+        }
+
+        .newsletter-form button {
+            padding: 14px 20px;
+            border-radius: var(--radius-full);
+        }
+
+        .footer-bottom {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-full);
             cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
         }
 
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+        @media (max-width: 1200px) {
+            .services-wrapper {
+                flex-direction: column;
             }
 
-            .hero p {
-                font-size: 18px;
+            .services-sidebar {
+                width: 100%;
             }
 
-            .about-content,
-            .contact-container {
+            .services-nav {
+                display: flex;
+                overflow-x: auto;
+                padding: 8px;
+                gap: 8px;
+            }
+
+            .services-nav-item {
+                white-space: nowrap;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero .container,
+            .about .container,
+            .appointment .container {
                 grid-template-columns: 1fr;
+                gap: 50px;
             }
 
-            .nav-links {
-                display: none;
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .hero-card-1 {
+                left: 0;
+            }
+
+            .hero-card-2 {
+                right: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .stat-item:nth-child(odd) {
+                border-right: 1px solid #e5e7eb;
+            }
+
+            .stat-item:nth-last-child(-n+2) {
+                border-bottom: none;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .why-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 30px;
+            }
         }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 768px) {
+            .header-top {
+                display: none;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                transform: translateX(-100%);
+                transition: transform 0.4s ease;
+                z-index: 998;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-image-bg {
+                top: 20px;
+                left: 20px;
+                right: -20px;
+                bottom: -20px;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img:first-child {
+                grid-row: auto;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span>🦷</span>
-                <span>Williston General Dentistry</span>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        <span>🦷 New Patient Special: Free Consultation + 20% Off First Treatment!</span>
+        <a href="#appointment">Book Now</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-contact">
+                    <div class="header-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call Us: <a href="tel:5551234567">(555) 123-4567</a></span>
+                    </div>
+                    <div class="header-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: <a href="mailto:info@willistondentistry.com">info@willistondentistry.com</a></span>
+                    </div>
+                    <div class="header-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+                <div class="header-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
-    </nav>
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="logo-text">
+                        Williston
+                        <span>General Dentistry</span>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#appointment">Contact</a></li>
+                    </ul>
+                    <div class="nav-cta">
+                        <a href="#appointment" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Appointment
+                        </a>
+                    </div>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Excellence in Dental Care Since 1987</h1>
-            <p>Providing Williston and Levy County with exceptional dental services in a stress-free, caring environment</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Book Appointment</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span>Trusted by 5,000+ Families in Williston</span>
+                </div>
+                <h1 class="hero-title">Your Family's <span>Smile</span> Is Our Priority</h1>
+                <p class="hero-desc">Welcome to Williston General Dentistry, where we provide comprehensive dental care for the whole family. Experience gentle, personalized treatment in a comfortable environment.</p>
+                <div class="hero-btns">
+                    <a href="#appointment" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Schedule Visit
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        <i class="fas fa-list"></i>
+                        Our Services
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Patient">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Patient">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Patient">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Patient">
+                    </div>
+                    <div class="trust-text">
+                        <strong>
+                            <span class="trust-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            5.0 Rating
+                        </strong>
+                        <span>Based on 500+ Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-bg"></div>
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Happy Family at Dentist">
+                </div>
+                <div class="hero-card hero-card-1">
+                    <div class="hero-card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="hero-card-text">
+                        <h4>Safe & Comfortable</h4>
+                        <p>Modern, sterile environment</p>
+                    </div>
+                </div>
+                <div class="hero-card hero-card-2">
+                    <div class="number">20+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Expert Dentists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">5-Star Reviews</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h2 class="section-title">Welcome to Our Practice</h2>
-        <p class="section-subtitle">Quality dental care for patients of all ages</p>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Your Smile is Our Priority</h3>
-                <p>Williston General Dentistry has been providing patients in Williston and Levy County with excellence in dental care since 1987. We provide a stress-free, relaxing and caring environment for patients of all ages.</p>
-                <p>Using the latest technology including Digital Radiography, our experienced staff works together as a team to give you exceptional quality treatment from the moment you walk in.</p>
-                <p><strong>Philosophy of Prevention:</strong> We believe problems can be prevented by educating our patients in proper hygiene and utilizing comprehensive, contemporary dentistry.</p>
+        <div class="container">
+            <div class="about-images">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" alt="Dental Office">
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=300&q=80" alt="Patient Care">
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=300&q=80" alt="Dental Equipment">
+                </div>
+                <div class="about-badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>ADA Certified</span>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop" alt="Modern Dental Office">
+            <div class="about-content">
+                <div class="section-label">About Us</div>
+                <h2 class="section-title">Welcome to Williston General Dentistry</h2>
+                <p>Since 2004, Williston General Dentistry has been proudly serving families in our community with exceptional dental care. Our modern facility is equipped with the latest technology, and our friendly team is dedicated to making every visit comfortable and stress-free.</p>
+                <p>We believe in preventive care and patient education, empowering you to maintain optimal oral health. From routine cleanings to advanced cosmetic procedures, we offer comprehensive services for patients of all ages.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Family-Friendly Environment</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>State-of-the-Art Technology</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Most Insurance Accepted</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Emergency Care Available</span>
+                    </div>
+                </div>
+                <a href="#appointment" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i>
+                    Contact Us Today
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Comprehensive dental care all in one convenient location</p>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">✨</div>
-                <h3>Cosmetic Dentistry</h3>
-                <p>Teeth whitening, Zoom treatments, bonding, and smile makeovers to give you the confident smile you deserve.</p>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Offer</div>
+                <h2 class="section-title">Our Dental Services</h2>
+                <p>We provide a complete range of dental services to meet all your oral health needs, from preventive care to cosmetic treatments.</p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Preventative Care</h3>
-                <p>Regular cleanings, digital X-rays, and examinations to keep your teeth healthy and prevent future problems.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">👑</div>
-                <h3>Restorative Dentistry</h3>
-                <p>Crowns, bridges, dentures, fillings, and implant restoration to restore function and beauty to your smile.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🦴</div>
-                <h3>Dental Implants</h3>
-                <p>In-house dental implant services for permanent tooth replacement solutions.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">💤</div>
-                <h3>Snoring Appliances</h3>
-                <p>Custom oral appliances to help reduce snoring and improve sleep quality.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🩺</div>
-                <h3>TMJ Treatment</h3>
-                <p>Specialized care for temporomandibular joint disorders and jaw pain relief.</p>
+            <div class="services-wrapper">
+                <div class="services-sidebar">
+                    <div class="services-nav">
+                        <div class="services-nav-item active">
+                            <i class="fas fa-teeth"></i>
+                            <span>General</span>
+                        </div>
+                        <div class="services-nav-item">
+                            <i class="fas fa-magic"></i>
+                            <span>Cosmetic</span>
+                        </div>
+                        <div class="services-nav-item">
+                            <i class="fas fa-tooth"></i>
+                            <span>Restorative</span>
+                        </div>
+                        <div class="services-nav-item">
+                            <i class="fas fa-child"></i>
+                            <span>Pediatric</span>
+                        </div>
+                        <div class="services-nav-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Emergency</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-teeth"></i>
+                        </div>
+                        <h3>Dental Cleanings</h3>
+                        <p>Professional cleanings and exams to maintain optimal oral health and prevent dental issues.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>Teeth Whitening</h3>
+                        <p>Professional whitening treatments to brighten your smile and boost your confidence.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <h3>Dental Implants</h3>
+                        <p>Permanent tooth replacement solutions that look and function like natural teeth.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-align-center"></i>
+                        </div>
+                        <h3>Invisalign®</h3>
+                        <p>Clear aligners to straighten your teeth discreetly without metal braces.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Crowns & Bridges</h3>
+                        <p>Custom restorations to repair damaged teeth and replace missing ones.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Kids Dentistry</h3>
+                        <p>Gentle, fun dental care designed specifically for children of all ages.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-choose">
-        <h2 class="section-title">Why Choose Us?</h2>
-        <p class="section-subtitle">Experience the difference at Williston General Dentistry</p>
-        
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">📅</div>
-                <h3>Since 1987</h3>
-                <p>Over 35 years of trusted dental care in the community</p>
+    <section class="why-us">
+        <div class="why-us-pattern"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">The Williston Difference</h2>
+                <p>Discover why thousands of families trust us with their dental care.</p>
             </div>
-            
-            <div class="feature">
-                <div class="feature-icon">🔬</div>
-                <h3>Latest Technology</h3>
-                <p>Digital radiography for less radiation exposure and better diagnostics</p>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-icon">👨‍⚕️</div>
-                <h3>Experienced Team</h3>
-                <p>Skilled staff dedicated to your comfort and care</p>
-            </div>
-            
-            <div class="feature">
-                <div class="feature-icon">💳</div>
-                <h3>Flexible Financing</h3>
-                <p>CareCredit payment plans available to fit your budget</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compassionate Care</h3>
+                    <p>We treat every patient like family, ensuring comfort and understanding throughout your visit.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>State-of-the-art equipment for precise diagnosis and comfortable treatments.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Evening and weekend appointments available to fit your busy lifestyle.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Affordable Options</h3>
+                    <p>Flexible payment plans and we work with most insurance providers.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Experienced Team</h3>
+                    <p>Our skilled professionals have decades of combined experience.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Emergency Services</h3>
+                    <p>Same-day emergency appointments for urgent dental needs.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <h2 class="section-title">Our Modern Facility</h2>
-        <p class="section-subtitle">State-of-the-art equipment in a comfortable environment</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop" alt="Dental Chair">
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Team</div>
+                <h2 class="section-title">Meet Our Dentists</h2>
+                <p>Our experienced team is dedicated to providing you with the highest quality dental care.</p>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop" alt="Dental Tools">
-            </div>
-            <div class="gallery-item">
-                <img src="https://vdbg.com/wp-content/uploads/2024/05/shutterstock_2133343207-1-1.jpg?w=800&h=600&fit=crop" alt="Dental Office">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop" alt="Dentist with Patient">
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr. Smith">
+                        <div class="team-overlay">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <h3>Dr. James Wilson</h3>
+                    <span class="role">Lead Dentist, DDS</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Johnson">
+                        <div class="team-overlay">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <h3>Dr. Sarah Chen</h3>
+                    <span class="role">Cosmetic Dentist</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="Dr. Davis">
+                        <div class="team-overlay">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <h3>Dr. Michael Brown</h3>
+                    <span class="role">Orthodontist</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="Dr. Miller">
+                        <div class="team-overlay">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <h3>Dr. Emily Davis</h3>
+                    <span class="role">Pediatric Dentist</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p style="margin-bottom: 40px;">We're here to answer your questions and schedule your appointment</p>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Address</h4>
-                        <p>173 N. Main Street<br>Williston, FL 32696</p>
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Testimonials</div>
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p>Don't just take our word for it. Hear from our happy patients!</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The entire team at Williston Dentistry is amazing! They made my kids feel so comfortable, and now they actually look forward to their dental visits. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Jennifer M.">
+                        <div>
+                            <h4>Jennifer Martinez</h4>
+                            <span>Mother of 3</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>(352) 528-4008</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was terrified of dentists my whole life, but Dr. Wilson and his team changed everything. They're so patient and gentle. My smile has never looked better!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Robert T.">
+                        <div>
+                            <h4>Robert Thompson</h4>
+                            <span>Business Owner</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
-                    <div class="contact-details">
-                        <h4>Hours</h4>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday & Sunday: Closed</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best dental experience ever! The office is beautiful, the staff is friendly, and they use the latest technology. I've recommended them to all my friends and family."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Amanda L.">
+                        <div>
+                            <h4>Amanda Lewis</h4>
+                            <span>Teacher</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Phone">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-pattern"></div>
+                <div class="cta-content">
+                    <h2>Ready for a Healthier Smile?</h2>
+                    <p>Schedule your appointment today and experience the Williston difference. New patients always welcome!</p>
+                </div>
+                <div class="cta-btns">
+                    <a href="#appointment" class="btn btn-white">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Online
+                    </a>
+                    <a href="tel:5551234567" class="btn btn-outline" style="border-color: white; color: white;">
+                        <i class="fas fa-phone-alt"></i>
+                        (555) 123-4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment" id="appointment">
+        <div class="container">
+            <div class="appointment-content">
+                <div class="section-label">Book Now</div>
+                <h2>Schedule Your Visit</h2>
+                <p>Ready to take the first step toward a healthier smile? Book your appointment online or give us a call. We can't wait to meet you!</p>
+                <div class="appointment-features">
+                    <div class="appointment-feature">
+                        <div class="appointment-feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Flexible Hours</h4>
+                            <p>Evening and Saturday appointments available</p>
+                        </div>
+                    </div>
+                    <div class="appointment-feature">
+                        <div class="appointment-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h4>Same-Day Emergency</h4>
+                            <p>Urgent care when you need it most</p>
+                        </div>
+                    </div>
+                    <div class="appointment-feature">
+                        <div class="appointment-feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div>
+                            <h4>Easy Payment Options</h4>
+                            <p>Insurance accepted, financing available</p>
+                        </div>
+                    </div>
+                    <div class="appointment-feature">
+                        <div class="appointment-feature-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div>
+                            <h4>New Patient Specials</h4>
+                            <p>Free consultation for first-time visitors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-form">
+                <h3>Request an Appointment</h3>
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" placeholder="Your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" placeholder="Your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service">
+                                <option value="">Select a service</option>
+                                <option value="cleaning">Cleaning & Exam</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="invisalign">Invisalign</option>
+                                <option value="crowns">Crowns & Bridges</option>
+                                <option value="pediatric">Kids Dentistry</option>
+                                <option value="emergency">Emergency Care</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Notes</label>
+                        <textarea id="message" placeholder="Tell us about your dental needs..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Request Appointment
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Contact Bar -->
+    <section class="contact-bar">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>123 Main Street, Suite 100<br>Williston, ND 58801</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <a href="tel:5551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:info@willistondentistry.com">info@willistondentistry.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Office Hours</h4>
+                        <p>Mon-Fri: 8AM - 6PM<br>Sat: 9AM - 2PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Williston General Dentistry. All rights reserved.</p>
-            <p>173 N. Main Street, Williston, FL 32696 | (352) 528-4008</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <div class="logo-text">
+                            Williston
+                            <span>General Dentistry</span>
+                        </div>
+                    </a>
+                    <p>Providing exceptional dental care to the Williston community since 2004. Your smile is our passion, and your health is our priority.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#appointment">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">General Dentistry</a></li>
+                        <li><a href="#">Cosmetic Dentistry</a></li>
+                        <li><a href="#">Dental Implants</a></li>
+                        <li><a href="#">Invisalign®</a></li>
+                        <li><a href="#">Kids Dentistry</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive dental tips and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Williston General Dentistry. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
-        // Navbar scroll effect
+        // Header scroll effect
+        const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                header.classList.add('scrolled');
             } else {
-                navbar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
             }
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            e.target.reset();
+        // Mobile navigation
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Services nav active state
+        document.querySelectorAll('.services-nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.services-nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('appointmentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your appointment.');
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .why-card, .team-card, .testimonial-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + (element.dataset.suffix || '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString() + (element.dataset.suffix || '');
+                }
+            }, 30);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-number').forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/[^0-9]/g, ''));
+                        const suffix = text.replace(/[0-9,]/g, '');
+                        stat.dataset.suffix = suffix;
+                        animateCounter(stat, number);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
     </script>
 </body>
 </html>
